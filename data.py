@@ -18,8 +18,8 @@ API_KEY_PARAM = '?key={}'.format(apiKey)
 # ===== REFRESH DATA =====
 
 if args.delete:
-	print "\nDeleting:"
-	print "========="
+	print("\nDeleting:")
+	print ("=========")
 	
 	objectsToDelete = ['Customers', 'Accounts']
 
@@ -27,14 +27,14 @@ if args.delete:
 		deleteUrl = BASE_URL + '/data' + API_KEY_PARAM + '&type={}'.format(objectsToDelete[i])
 		deleteResponse = requests.delete(deleteUrl)
 		if deleteResponse.status_code != 204:
-			print "!! Error removing {}".format(objectsToDelete[i])	+ " !!"
+			print ("!! Error removing {}".format(objectsToDelete[i])	+ " !!")
 		else:
-			print "Removed all {}".format(objectsToDelete[i])
+			print ("Removed all {}".format(objectsToDelete[i]))
 
 # ===== CREATE CUSTOMER =====
 
-print "\nCreating:"
-print "========="
+print ("\nCreating:")
+print ("=========")
 
 customerUrl = BASE_URL + '/customers' + API_KEY_PARAM
 
@@ -62,9 +62,9 @@ customerObj = jsonResponse['objectCreated']
 name = customerObj['first_name'] + ' ' + customerObj['last_name']
 
 if customerPostResponse.status_code != 201:
-	print "!! Error creating {}".format(name)	+ " !!"
-	print "Cannot create accounts without customer.  Terminating..."
-	print"\n"
+	print ("!! Error creating {}".format(name)	+ " !!")
+	print ("Cannot create accounts without customer.  Terminating...")
+	print("\n")
 	sys.exit()
 else:
 	print('Customer Created: ' + name)
@@ -97,7 +97,7 @@ for i in range(0, 5):
 	accountObj = accountJsonResponse['objectCreated']
 
 	if accountPostResponse.status_code != 201:
-		print "!! Error creating {}".format(accountObj['nickname'])	+ " !!"
+		print ("!! Error creating {}".format(accountObj['nickname'])	+ " !!")
 	else:
 		print('Account Created: ' + accountObj['nickname'])
 

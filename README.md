@@ -6,7 +6,7 @@ For step-by-step implementation instructions, see the [Wiki](https://github.com/
 
 ## Requirements  
 
-* Python 2.7
+* Python 3.6
 * Pip for the appropriate version of Python (https://pip.pypa.io/en/stable/installing/)
 
 ## Installation
@@ -16,10 +16,9 @@ For step-by-step implementation instructions, see the [Wiki](https://github.com/
 	```
 	git clone https://github.com/nessieisreal/api-demo-starter.git
 	```  
+2. create file  config.py in main directory 
 
-2. Navigate to the root of the project and create a file `config.py`.
-
-3. Open the file you just created (config.py) and add your Nessie API key as a variable.  
+3. Open the file (config.py) and add your Nessie API key as a variable.
 	
 	```
 	API_KEY = "my_api_key"
